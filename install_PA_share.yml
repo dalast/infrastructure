@@ -1,0 +1,12 @@
+---
+- hosts: cst08.atlas-2.lan 
+  gather_facts: false
+  tasks:
+    - name: Install ProtectedMailAgent from shared storage
+      win_package:
+         path: \\10.0.1.91\share\soft\PMA.exe
+         product_id: ProtectedMailAgent
+         arguments: /SILENT
+         state: present
+         user_name: ATLAS-2.LAN\manager
+         user_password: Z9GF4d66

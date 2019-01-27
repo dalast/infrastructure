@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    tasks:
+    - name: Configure resolv.conf
+      template:
+        src: /etc/ansible/resolv.conf.j2
+        dest: /etc/resolv.conf
+        backup: yes
+      tags:
+        - dnsconfig
