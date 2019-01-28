@@ -1,0 +1,42 @@
+#10.0.0.174 ansible_connection=winrm ansible_user=admin ansible_password=p@$$w0rd ansible_port=5986 ansible_winrm_server_cert_validation=ignore
+
+# Domain Admin
+
+[windows:children]
+domain_admin
+autosert
+tfs
+
+[domain_admin]
+cst08.atlas-2.lan 
+
+[autosert]
+srv-autoserttst.atlas-2.lan
+srv-atosert200.atlas-2.lan
+
+[tfs]
+ws2012-tfs.atlas-2.lan
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=manager@ATLAS-2.LAN
+ansible_password=Z9GF4d66
+ansible_port=5986
+ansible_winrm_server_cert_validation=ignore
+
+
+[linux:children]
+db
+zimbra
+
+[db]
+10.0.1.30
+10.0.28.23
+10.0.1.233 ansible_user=root
+
+[zimbra]
+192.168.5.117
+
+[linux:vars]
+ansible_user=ansible
+ansible_become=yes
