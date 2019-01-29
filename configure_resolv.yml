@@ -7,4 +7,4 @@
         dest: /etc/resolv.conf
         backup: yes
       tags:
-        - dnsconfig1
+        - dnsconfig2
