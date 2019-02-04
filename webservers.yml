@@ -1,7 +1,7 @@
 #10.0.0.174 ansible_connection=winrm ansible_user=admin ansible_password=p@$$w0rd ansible_port=5986 ansible_winrm_server_cert_validation=ignore
 
 # Domain Admin
-
+localhost
 [windows:children]
 domain_admin
 autosert
